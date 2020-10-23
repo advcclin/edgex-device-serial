@@ -1,0 +1,37 @@
+name: "Serial-Integer-Generator"
+manufacturer: "Advantech"
+model: "Device-Serial-01"
+labels:
+- "device-serial-example"
+description: "Example of Device-Serial"
+
+deviceResources:
+-
+  name: "SerialValue"
+  description: "Generate serial value"
+  properties:
+    value:
+      { type: "Int32", readWrite: "R", minimum: "-2147483648", maximum: "2147483647", defaultValue: "0" }
+    units:
+      { type: "String", readWrite: "R", defaultValue: "serial value" }
+
+resources:
+-
+  name: "GenerateSerialValue"
+  get:
+  - { operation: "get", object: "SerialValue", property: "value", parameter: "SerialValue" }
+
+commands:
+-
+  name: "GenerateSerialValue"
+  get:
+    path: "/api/v1/device/{deviceId}/GenerateSerialValue"
+    responses:
+    -
+      code: "200"
+      description: ""
+      expectedValues: ["SerialValue"]
+    -
+      code: "503"
+      description: "service unavailable"
+      expectedValues: []
