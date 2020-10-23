@@ -64,11 +64,14 @@ Level = "INFO"
 
 # Pre-define Schedule Configuration
 [[Schedules]]
+Name = "1sec-schedule"
+Frequency = "PT1S"
+[[Schedules]]
 Name = "5sec-schedule"
 Frequency = "PT5S"
 
 [[ScheduleEvents]]
-Name = "readValue"
+Name = "readSerialValue"
 Schedule = "5sec-schedule"
   [ScheduleEvents.Addressable]
   HTTPMethod = "GET"
