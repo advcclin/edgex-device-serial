@@ -48,6 +48,7 @@ func (d *SerialDriver) HandleReadCommands(addr *models.Addressable, reqs []dsMod
 	for i, req := range reqs {
 		t := req.DeviceObject.Properties.Value.Type
 		v, err := rd.value(t)
+		d.lc.Info(fmt.Sprintf("SerialDriver.HandleReadCommands: value=%d", v))
 		if err != nil {
 			return nil, err
 		}

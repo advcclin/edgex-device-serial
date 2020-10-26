@@ -1,1 +1,1 @@
-http://USM-S62-IP:49990/api/v1/device/name/Serial-Integer-Generator01/GenerateSerialValue
+http://EDGEX-IP:49990/api/v1/device/name/Serial-Integer-Generator01/GenerateSerialValue
